@@ -8,3 +8,20 @@ repos:
       args: [ --fix ]
     # Run the formatter.
     - id: ruff-format
+  
+- repo: local
+  hooks:
+    - id: unittest-check
+      name: unittest-check
+      entry: python3 -m unittest discover
+      args: ["-v", "-s", ".", "-p", "'*test*.py"]
+      pass_filenames: false
+      language: system
+      'types': [python]
+      stages: [commit]
+    - id: unittest-coverage
+      name: unittest-coverage
+      entry: python3 -m coverage report --fail-under=70
+      pass_filenames: false
+      language: system
+      stages: [commit]

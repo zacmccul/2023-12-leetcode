@@ -4,7 +4,7 @@ import os
 
 sys.path.insert(0, os.getcwd())
 
-from two_sum import twoSum
+from two_sum import twoSum  # noqa: E402
 
 
 class Test(unittest.TestCase):
