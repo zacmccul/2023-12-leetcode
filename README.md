@@ -7,3 +7,5 @@
 `python3 -m coverage report`
 
 `.\scripts\newLeetcode.ps1 $nameOfLeetCode`
+
+`pre-commit run --all-files`
