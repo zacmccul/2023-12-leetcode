@@ -33,6 +33,8 @@ bin/**
 obj/**
 .pytest_cache
 tmp/**
+.coverage
+.ruff_cache
 .python-version
 .vs/
 test-results*.xml
