@@ -1,5 +1,2 @@
-import typing as t
-
 """
 """
-

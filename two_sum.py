@@ -67,7 +67,9 @@ def twoSum(nums: t.List[int], target: int) -> t.List[int]:
     iters = 0
 
     # easy func to get the latest sum with the new min/max indicies
-    get_sum: t.Callable[[int, int], int] = lambda x, y: sorted_nums[x] + sorted_nums[y]
+    def get_sum(x: int, y: int) -> int:
+        return sorted_nums[x] + sorted_nums[y]
+
     cur_sum = get_sum(min_i, max_i)
 
     # keep going until we match our target OR hit max iter
@@ -81,7 +83,7 @@ def twoSum(nums: t.List[int], target: int) -> t.List[int]:
         iters += 1
         cur_sum = get_sum(min_i, max_i)
     if iters == 10_000:
-        raise ValueError(f"Iterated for 10,000 cycles and did not find an answer!")
+        raise ValueError("Iterated for 10,000 cycles and did not find an answer!")
     # error handling in case algo fails
     elif min_i >= len(nums) or max_i < 0:
         raise ValueError(f"Min and max went to bad places {min_i} with max: {max_i}")
