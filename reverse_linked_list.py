@@ -11,8 +11,8 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 class ListNode:
     def __init__(self, arr: list[int]) -> None:
         if len(arr) == 0:
-            self.val = None
             self.next = None
+            self.val = 0
         else:
             self.val = arr.pop(0)
             self.next = ListNode(arr) if len(arr) else None
@@ -20,6 +20,7 @@ class ListNode:
     def __repr__(self) -> str:
         if self.next is None:
             return f"{self.val}"
+
         return f"{self.val} -> {repr(self.next)}"
 
 
