@@ -85,7 +85,7 @@ def mergeKLists(lists: t.List[t.Optional[ListNode]]) -> t.Optional[ListNode]:
     # correct with all the other code so we abuse type: ignore as hatch to avoid
     # refactoring this entire code. In code review/prod this would/should be reviewed
     # a bit more.
-    pruned_lists[head_idx] = pruned_lists[head_idx].next
+    pruned_lists[head_idx] = pruned_lists[head_idx].next  # type: ignore
     if t.cast(ListNode | None, pruned_lists[head_idx]) is None:
         pruned_lists.pop(head_idx)
 
